@@ -17,7 +17,7 @@ public class User {
     private Long id;
     private String name;
 
-    @OneToMany(mappedBy = "user", cascade = {CascadeType.PERSIST, CascadeType.REMOVE}) //뒤가 many일 때 lazy 타입
+    @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST, orphanRemoval = true) //뒤가 many일 때 lazy 타입
     private List<Food> foodList = new ArrayList<>();
 
     public void addFoodList(Food food) {
