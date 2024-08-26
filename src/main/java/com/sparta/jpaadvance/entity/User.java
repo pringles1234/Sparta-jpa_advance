@@ -17,6 +17,6 @@ public class User {
     private Long id;
     private String name;
 
-    @OneToMany(mappedBy = "user")
-    private List<Order> orderList = new ArrayList<>();
+    @OneToMany(mappedBy = "user") //뒤가 many일 때 lazy 타입
+    private List<Food> foodList = new ArrayList<>();
 }
